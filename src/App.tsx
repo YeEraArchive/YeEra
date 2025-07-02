@@ -7,9 +7,7 @@ import {
 } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import TgfdPage from "./pages/TgfdPage";
-import YeezusPage from "./pages/YeezusPage";
-import Yeezus2Page from "./pages/Yeezus2Page";
+import Artworks from "./pages/Artworks";
 
 function App() {
   return (
@@ -22,10 +20,8 @@ function App() {
         <main className="flex-1 pt-10 pb-20">
           <div className="w-full">
             <Routes>
-              <Route path="/" element={<Navigate to="/tgfd" replace />} />
-              <Route path="/tgfd" element={<TgfdPage />} />
-              <Route path="/yeezus" element={<YeezusPage />} />
-              <Route path="/yeezus2" element={<Yeezus2Page />} />
+              <Route path="/" element={<Navigate to="/artworks" replace />} />
+              <Route path="/artworks" element={<Artworks />} />
             </Routes>
           </div>
         </main>

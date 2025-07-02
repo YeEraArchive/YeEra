@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
 interface ItemModalProps {
-  img: string;
+  thumb: React.ReactNode;
   title: string;
   artType: string;
   projectType: string;
@@ -11,7 +11,7 @@ interface ItemModalProps {
 }
 
 const ItemModal: React.FC<ItemModalProps> = ({
-  img,
+  thumb,
   title,
   artType,
   projectType,
@@ -47,7 +47,7 @@ const ItemModal: React.FC<ItemModalProps> = ({
     >
       <div
         ref={modalRef}
-        className="bg-white rounded-xl shadow-xl w-full max-w-xs md:max-w-xl p-0 relative mx-4 flex flex-col items-center overflow-hidden"
+        className="bg-white rounded-2xl shadow-2xl w-full max-w-xs md:max-w-xl p-0 relative mx-4 flex flex-col items-center overflow-hidden"
         onMouseDown={(e) => e.stopPropagation()}
         style={{ maxHeight: "90vh" }}
       >
@@ -59,22 +59,13 @@ const ItemModal: React.FC<ItemModalProps> = ({
           ×
         </button>
         <div
-          className="w-full flex items-center justify-center mb-3 bg-neutral-100"
-          style={{ aspectRatio: "1/1", minHeight: 0, maxHeight: "15rem" }}
+          className="w-full aspect-square flex items-center justify-center bg-neutral-100 rounded-t-2xl overflow-hidden"
+          style={{ minHeight: 0, background: "#f3f3f3" }}
         >
-          <img
-            src={
-              img.startsWith(import.meta.env.BASE_URL)
-                ? img
-                : `${import.meta.env.BASE_URL}${img.replace(/^\//, "")}`
-            }
-            alt={title}
-            className="w-full max-h-60 object-contain rounded-t-xl"
-            style={{ aspectRatio: "1/1", background: "#f3f3f3" }}
-          />
+          {thumb}
         </div>
-        <div className="px-6 pb-6 w-full flex flex-col items-center">
-          <div className="text-lg font-semibold text-center text-neutral-900 mb-2">
+        <div className="w-full px-8 py-6 flex flex-col items-center">
+          <div className="text-xl font-bold text-center text-neutral-900 mb-2">
             {title}
           </div>
           <div className="flex gap-2 mb-4 flex-wrap justify-center">

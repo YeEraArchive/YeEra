@@ -7,7 +7,7 @@ const Footer: React.FC = () => (
   >
     <div className="max-w-3xl mx-auto px-4 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm h-full">
       <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-        <span className="font-semibold tracking-widest">YEEZUS ERA</span>
+        <span className="font-semibold tracking-widest">YeEra</span>
         <span className="text-primary-foreground/60 font-bold">|</span>
         <span className="hover:underline cursor-pointer relative group">
           Disclaimer
@@ -20,12 +20,12 @@ const Footer: React.FC = () => (
         <span className="hover:underline cursor-pointer relative group">
           Team
           <span className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 py-2 rounded bg-neutral-800 text-neutral-100 text-xs shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 whitespace-pre-line text-center">
-            chn_m1n
+            @ye_era_archive
           </span>
         </span>
         <span className="text-primary-foreground/60 font-bold">|</span>
         <a
-          href="https://www.instagram.com/chn_m1n/"
+          href="https://www.instagram.com/ye_era_archive/"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:opacity-80 transition ml-2"
