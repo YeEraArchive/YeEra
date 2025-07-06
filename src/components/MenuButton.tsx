@@ -70,7 +70,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({
             setOpen(true);
           }
         }}
-        className="inline-flex items-center justify-center rounded-md border border-black bg-white text-black hover:bg-black/5 h-10 w-10 p-0 transition focus:outline-none focus:ring-2 focus:ring-black/20"
+        className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/80 backdrop-blur-sm text-gray-700 hover:bg-white/90 hover:scale-105 h-12 w-12 p-0 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-300 shadow-lg"
         {...props}
       >
         <span className="sr-only">{ariaLabel}</span>
@@ -92,7 +92,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({
         <div
           ref={dropdownRef}
           className={
-            "absolute left-0 top-full w-full rounded-none border-b border-x-0 border-t-0 bg-white shadow-xl z-50 " +
+            "absolute left-0 top-full w-full rounded-2xl border border-white/30 bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-md shadow-2xl z-50 overflow-hidden " +
             (dropdownAnim === "in"
               ? "animate-dropdown-in"
               : "animate-dropdown-out")
@@ -105,9 +105,9 @@ const MenuButton: React.FC<MenuButtonProps> = ({
               onClick={() => setOpen(false)}
               className={
                 (location.pathname === item.key
-                  ? "bg-primary text-primary-foreground"
-                  : "") +
-                " block w-full text-lg py-4 border-b last:border-b-0 border-border rounded-none hover:bg-muted transition text-center"
+                  ? "bg-gradient-to-r from-gray-100 to-gray-50 text-gray-800"
+                  : "text-gray-600 hover:text-gray-800") +
+                " block w-full text-lg py-4 border-b last:border-b-0 border-gray-200/50 hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 transition-all duration-300 text-center font-medium"
               }
             >
               {item.label}

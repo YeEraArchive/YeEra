@@ -39,7 +39,7 @@ const ItemModal: React.FC<ItemModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-2 transition-opacity duration-300 animate-fadein"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md px-2 transition-opacity duration-300 animate-fadein"
       onMouseDown={handleBackdropClick}
       aria-modal="true"
       role="dialog"
@@ -47,40 +47,40 @@ const ItemModal: React.FC<ItemModalProps> = ({
     >
       <div
         ref={modalRef}
-        className="bg-white rounded-2xl shadow-2xl w-full max-w-xs md:max-w-xl p-0 relative mx-4 flex flex-col items-center overflow-hidden"
+        className="bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-md rounded-3xl shadow-2xl w-full max-w-xs md:max-w-xl p-0 relative mx-4 flex flex-col items-center overflow-hidden border border-white/30"
         onMouseDown={(e) => e.stopPropagation()}
         style={{ maxHeight: "90vh" }}
       >
         <button
-          className="absolute top-3 right-3 text-2xl text-neutral-500 bg-white/80 hover:bg-neutral-200 rounded-full w-9 h-9 flex items-center justify-center shadow transition z-10 border border-neutral-200"
+          className="absolute top-4 right-4 text-2xl text-gray-500 bg-white/80 backdrop-blur-sm hover:bg-white/90 rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-all duration-300 z-10 border border-white/30 hover:scale-110"
           onClick={onClose}
           aria-label="Close"
         >
           ×
         </button>
         <div
-          className="w-full aspect-square flex items-center justify-center bg-neutral-100 rounded-t-2xl overflow-hidden"
-          style={{ minHeight: 0, background: "#f3f3f3" }}
+          className="w-full aspect-square flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 rounded-t-3xl overflow-hidden"
+          style={{ minHeight: 0 }}
         >
           {thumb}
         </div>
-        <div className="w-full px-8 py-6 flex flex-col items-center">
-          <div className="text-xl font-bold text-center text-neutral-900 mb-2">
+        <div className="w-full px-8 py-8 flex flex-col items-center">
+          <div className="text-2xl font-bold text-center text-gray-800 mb-4 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
             {title}
           </div>
-          <div className="flex gap-2 mb-4 flex-wrap justify-center">
-            <span className="inline-block bg-neutral-200 text-neutral-700 text-xs font-semibold px-3 py-1 rounded-full border border-neutral-300">
+          <div className="flex gap-3 mb-6 flex-wrap justify-center">
+            <span className="inline-block bg-gradient-to-r from-blue-100 to-blue-50 text-blue-700 text-xs font-semibold px-4 py-2 rounded-full border border-blue-200/50 shadow-sm">
               {artType}
             </span>
-            <span className="inline-block bg-neutral-200 text-neutral-700 text-xs font-semibold px-3 py-1 rounded-full border border-neutral-300">
+            <span className="inline-block bg-gradient-to-r from-green-100 to-green-50 text-green-700 text-xs font-semibold px-4 py-2 rounded-full border border-green-200/50 shadow-sm">
               {projectType}
             </span>
-            <span className="inline-block bg-neutral-200 text-neutral-700 text-xs font-semibold px-3 py-1 rounded-full border border-neutral-300">
+            <span className="inline-block bg-gradient-to-r from-purple-100 to-purple-50 text-purple-700 text-xs font-semibold px-4 py-2 rounded-full border border-purple-200/50 shadow-sm">
               {use}
             </span>
           </div>
           <div
-            className="bg-neutral-50 rounded-lg p-4 shadow-inner text-base text-neutral-800 whitespace-pre-line leading-relaxed border border-neutral-200 w-full overflow-y-auto"
+            className="bg-gradient-to-br from-gray-50/80 to-gray-100/60 backdrop-blur-sm rounded-2xl p-6 shadow-inner text-base text-gray-700 whitespace-pre-line leading-relaxed border border-gray-200/50 w-full overflow-y-auto"
             style={{ maxHeight: "12rem" }}
           >
             {description}
