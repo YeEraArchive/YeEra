@@ -56,6 +56,8 @@ const MenuButton: React.FC<MenuButtonProps> = ({
     }
   }, [open]);
 
+  const isPlaceholder = (key: string) => key.startsWith("/placeholder");
+
   return (
     <>
       <button
@@ -99,19 +101,33 @@ const MenuButton: React.FC<MenuButtonProps> = ({
           }
         >
           {menuItems.map((item) => (
-            <Link
+            <div
               key={item.key}
-              to={item.key}
-              onClick={() => setOpen(false)}
               className={
-                (location.pathname === item.key
-                  ? "bg-gradient-to-r from-gray-100 to-gray-50 text-gray-800"
-                  : "text-gray-600 hover:text-gray-800") +
-                " block w-full text-lg py-4 border-b last:border-b-0 border-gray-200/50 hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 transition-all duration-300 text-center font-medium"
+                isPlaceholder(item.key)
+                  ? "block w-full text-lg py-4 border-b last:border-b-0 border-gray-200/50 text-transparent cursor-default"
+                  : ""
               }
             >
-              {item.label}
-            </Link>
+              {isPlaceholder(item.key) ? (
+                <span className="block w-full text-center font-medium">
+                  {item.label}
+                </span>
+              ) : (
+                <Link
+                  to={item.key}
+                  onClick={() => setOpen(false)}
+                  className={
+                    (location.pathname === item.key
+                      ? "bg-gradient-to-r from-gray-100 to-gray-50 text-gray-800"
+                      : "text-gray-600 hover:text-gray-800") +
+                    " block w-full text-lg py-4 border-b last:border-b-0 border-gray-200/50 hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 transition-all duration-300 text-center font-medium"
+                  }
+                >
+                  {item.label}
+                </Link>
+              )}
+            </div>
           ))}
         </div>
       )}

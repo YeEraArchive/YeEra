@@ -72,3 +72,75 @@ body::-webkit-scrollbar,
 *::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+/* Select 박스 커스텀 스타일 */
+select {
+  background-image: none !important;
+}
+
+/* Select 드롭다운 스타일 개선 */
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.3);
+}
+
+/* Webkit 브라우저용 select 스타일 */
+select::-ms-expand {
+  display: none;
+}
+
+/* Firefox용 select 스타일 */
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Select 옵션 스타일링 */
+select option {
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.9)
+  );
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #374151;
+  font-weight: 500;
+  padding: 16px 20px;
+  transition: all 0.3s ease;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+select option:hover {
+  background: linear-gradient(
+    to bottom right,
+    rgba(249, 250, 251, 0.95),
+    rgba(243, 244, 246, 0.9)
+  );
+  color: #1f2937;
+}
+
+select option:checked {
+  background: linear-gradient(
+    to bottom right,
+    rgba(243, 244, 246, 0.95),
+    rgba(229, 231, 235, 0.9)
+  );
+  color: #1f2937;
+  font-weight: 600;
+}
+
+/* Select 드롭다운 컨테이너 스타일 */
+select:focus {
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+/* 드롭다운 리스트 스타일 */
+select:focus option {
+  border-radius: 8px;
+  margin: 2px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

@@ -2,7 +2,11 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import MenuButton from "./MenuButton";
 
-const menuItems = [{ key: "/artworks", label: "Artworks" }];
+const menuItems = [
+  { key: "/placeholder1", label: "Placeholder 1" },
+  { key: "/artworks", label: "Artworks" },
+  { key: "/placeholder2", label: "Placeholder 2" },
+];
 
 interface HeaderProps {
   era?: string;

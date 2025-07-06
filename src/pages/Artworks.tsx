@@ -98,25 +98,24 @@ const Artworks: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
             Artworks
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-gray-400 to-gray-300 mx-auto rounded-full"></div>
         </div>
 
         <div className="mb-8 flex justify-center">
-          <div className="relative">
+          <div className="relative group">
             <select
               value={selectedEra}
               onChange={(e) => setSelectedEra(e.target.value)}
-              className="bg-gradient-to-r from-white/80 to-white/60 backdrop-blur-md border border-gray-200/50 rounded-full px-6 py-3 pr-10 text-gray-700 font-medium shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent appearance-none cursor-pointer hover:from-white/90 hover:to-white/70 transition-all duration-300"
+              className="bg-gradient-to-r from-white/90 to-white/70 backdrop-blur-md border border-white/50 rounded-full px-8 py-4 pr-12 text-gray-700 font-medium shadow-xl focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/70 appearance-none cursor-pointer hover:from-white/95 hover:to-white/80 transition-all duration-500 text-lg min-w-[200px]"
             >
               {eras.map((era) => (
-                <option key={era} value={era}>
+                <option key={era} value={era} className="py-3">
                   {era}
                 </option>
               ))}
             </select>
-            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
+            <div className="absolute right-6 top-1/2 transform -translate-y-1/2 pointer-events-none transition-transform duration-300 group-hover:scale-110">
               <svg
-                className="w-4 h-4 text-gray-500"
+                className="w-5 h-5 text-gray-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
